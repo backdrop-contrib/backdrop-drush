@@ -615,7 +615,7 @@ class BackdropBoot extends BaseBoot {
   // @codingStandardsIgnoreLine
   protected function module_list() {
     $enabled = array();
-    $rsc = drush_db_select('system', 'name', 'type=:type AND status=:status', array(':type' => 'module', ':status' => 1));
+    $rsc = drush_db_select('system', 'name', "type='module' AND status=1", array());
     while ($row = drush_db_result($rsc)) {
       $enabled[$row] = $row;
     }
