@@ -1,11 +1,15 @@
 Drush Integration for Backdrop CMS
 ==================================
 
-[![Build Status](https://travis-ci.org/backdrop-contrib/backdrop-drush-extension.svg?branch=1.x-1.x)](https://travis-ci.org/backdrop-contrib/backdrop-drush-extension)
-
-This project allows you to use [Drush](https://github.com/drush-ops/drush) with
+This project allows you to use [Drush 8](https://github.com/drush-ops/drush) with
 [Backdrop CMS](https://backdropcms.org). Drush is a command-line tool for
 manipulating content management systems.
+
+**This project is deprecated. The [bee](https://github.com/backdrop-contrib/bee)
+project is the best way to interact with Backdrop via the CLI.** If you use the
+backdrop-drush extension on your Backdrop projects, PHP 7.4 is recommended, as
+drush 8 has some issues with PHP 8+. Drush 8 is also scheduled to become
+unsupported when Drupal 7 reaches end-of-life on January 15, 2025.
 
 This integration is currently capable of executing the following commands:
 
