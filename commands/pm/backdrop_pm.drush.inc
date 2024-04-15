@@ -120,7 +120,7 @@ function backdrop_command_pm_download() {
   else {
     foreach ($projects as $project) {
       if ($project != 'backdrop') {
-        $html = backdrop_pm_get_from_github(
+        $url = backdrop_pm_get_from_github(
           "https://github.com/backdrop-contrib/$project/releases/latest"
         );
 
@@ -130,8 +130,6 @@ function backdrop_command_pm_download() {
         );
 
         $project_path = backdrop_pm_get_path($tags);
-        $html = explode("\"", $html);
-        $url = $html[1];
         $latest = explode('/', $url);
         $latest = array_reverse($latest);
 
@@ -187,9 +185,11 @@ function backdrop_pm_get_from_github($url) {
   curl_setopt($ch, CURLOPT_URL, $url);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
   curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 1);
-  $content = curl_exec($ch);
+  curl_exec($ch);
+  $curl_info = curl_getinfo($ch);
+  $redirect_url = "$curl_info[redirect_url]";
   curl_close($ch);
-  return $content;
+  return $redirect_url;
 }
 
 /**
