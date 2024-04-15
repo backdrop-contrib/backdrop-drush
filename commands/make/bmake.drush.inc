@@ -8,7 +8,7 @@
  * Implements hook_drush_command().
  */
 function bmake_drush_command() {
-  $itmes = array();
+  $items = array();
   $items['bmake'] = array(
     'description' => 'Turns a makefile into a working Backdrop codebase.',
     'callback' => 'bmake',

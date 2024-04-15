@@ -8,7 +8,7 @@
  * Implements hook_drush_command().
  */
 function backdrop_content_drush_command() {
-  $itmes = array();
+  $items = array();
   $items['backdrop-content-type-list'] = array(
     'description' => 'List the content types available on the site.',
     'aliases' => array('ctl', 'content-type-list'),
